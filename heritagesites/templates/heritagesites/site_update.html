@@ -13,11 +13,26 @@
     {% csrf_token %}
     
     <div class="row">
-      <div class="col-3">
-        {{ form.longitude|as_crispy_field }}
+      <div class="col-6">
+        {{ form.heritage_site_category|as_crispy_field }}
       </div>
-      <div class="col-3">
-        {{ form.latitude|as_crispy_field }}
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        {{ form.country_area|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        {{ form.site_name|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        {{ form.description|as_crispy_field }}
       </div>
     </div>
   
@@ -32,7 +47,16 @@
         {{ form.date_inscribed|as_crispy_field }}
       </div>
     </div>
-  
+    
+    <div class="row">
+      <div class="col-3">
+        {{ form.longitude|as_crispy_field }}
+      </div>
+      <div class="col-3">
+        {{ form.latitude|as_crispy_field }}
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-6">
         {{ form.area_hectares|as_crispy_field }}

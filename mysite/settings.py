@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from mysite import secret
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3@o&br$jvsj4kbb)hj-v&68q$8(eon81clb2kw(em(0q)lz=pi'
+SECRET_KEY = secret.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -141,8 +142,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Must include the default Django Auth ModelBackend for the admin site
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1071401959543-05bc49gjts8ua9q6boq2lhjurhiootts.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qvuL-htYyWrECZA7l9hZq9v2'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = secret.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = secret.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
 
 AUTHENTICATION_BACKENDS = (
     # 'social_core.backends.open_id.OpenIdAuth',
