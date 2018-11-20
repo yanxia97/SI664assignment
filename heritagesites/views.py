@@ -13,6 +13,9 @@ from django.http import HttpResponseRedirect
 from .models import HeritageSiteJurisdiction
 from django.shortcuts import redirect
 
+from .filters import HeritageSiteFilter
+from django_filters.views import FilterView
+
 def index(request):
 	return HttpResponse("Hello, world. You're at the UNESCO Heritage Sites index page.")
 
@@ -166,3 +169,7 @@ class CountryAreaDetailView(generic.DetailView):
 
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
+
+class SiteFilterView(FilterView):
+	filterset_class = HeritageSiteFilter
+	template_name = 'heritagesites/site_filter.html'
